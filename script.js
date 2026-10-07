@@ -1,0 +1,12 @@
+const menu = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('#navigation');
+function closeMenu() { navigation.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); menu.setAttribute('aria-label', 'Abrir menu'); }
+menu.addEventListener('click', () => { const open = navigation.classList.toggle('open'); menu.setAttribute('aria-expanded', String(open)); menu.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu'); });
+navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+const content = {"cera": ["Depilação na cera", "Converse com a Ana sobre as áreas de depilação na cera disponíveis e as orientações para antes e depois do atendimento."], "drenagem": ["Drenagem linfática", "Conheça o atendimento de drenagem linfática e tire suas dúvidas sobre a sessão. A indicação e a frequência são definidas individualmente."], "massagem": ["Massagem relaxante", "Reserve um momento para relaxar. Consulte a duração, os horários e os detalhes da sessão de massagem relaxante diretamente com a Ana."], "limpeza": ["Limpeza de pele", "Converse sobre as necessidades da sua pele e conheça as etapas do atendimento de limpeza de pele e as orientações de cuidado."], "peeling": ["Peeling", "Consulte os tipos de peeling disponíveis, como funciona a avaliação e os cuidados necessários antes e depois do procedimento."], "crio": ["Criolipólise", "O atendimento de criolipólise acontece em agenda quinzenal. Consulte a próxima data e agende uma avaliação. A agenda não representa uma recomendação de intervalo entre sessões para a mesma pessoa."]};
+const dialog = document.querySelector('#care-dialog');
+document.querySelectorAll('[data-care]').forEach(button => button.addEventListener('click', () => { const [title, description] = content[button.dataset.care]; document.querySelector('#dialog-title').textContent = title; document.querySelector('#dialog-description').textContent = description; dialog.showModal(); }));
+document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
+dialog.addEventListener('click', event => { if(event.target === dialog) { const rect = dialog.getBoundingClientRect(); if(event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close(); } });
+document.querySelector('#year').textContent = new Date().getFullYear();
