@@ -5,3 +5,15 @@
 
 /* Updated service catalog and location */
 .hero-art{aspect-ratio:0.83;height:auto}.hero-art img{height:auto;max-height:none;width:100%}.more-care{margin:28px 0 0;font-size:14px}.more-care .text-link{margin:0}.location{display:grid;grid-template-columns:0.85fr 1.15fr;gap:60px;border-top:1px solid var(--line);align-items:center}.location address{font-style:normal;font-size:18px;line-height:1.8}.location-note{font-size:14px;color:var(--muted);margin:22px 0}.map-frame{border:1px solid var(--line);background:#eee5db}.map-frame iframe{display:block;width:100%;height:410px;border:0}.map-frame>a{display:block;text-align:center;padding:12px;font-size:13px;text-decoration:underline}.care-card h3{overflow-wrap:anywhere}@media(max-width:1000px){nav{gap:16px}.location{gap:30px}}@media(max-width:700px){.location{grid-template-columns:1fr;gap:30px}.map-frame iframe{height:340px}.hero-art{aspect-ratio:0.83}}
+
+/* Principal serviço e assinatura */
+.care-card--primary{background:#845846;border-color:#845846;color:#fff7f0;box-shadow:0 8px 24px #68453318}
+.care-card--primary .card-top,.care-card--primary p,.care-card--primary .detail-button{color:#fff7f0}
+.care-card--primary .card-top{gap:12px;flex-wrap:wrap}
+.care-card--primary .service-badge{font-family:var(--sans);font-size:12px;font-weight:600;line-height:1.5;letter-spacing:.06em;padding:7px 11px;border:1px solid #edc7b477;border-radius:2px}
+.care-card--primary .detail-button{border-color:#ffffff55}
+.care-card--primary .service-contact{display:block;text-align:center;background:#f8eee3;color:#684533;padding:12px 16px;margin:0 0 20px;font-size:14px;font-weight:600}
+.care-card--primary .service-contact:hover{background:#fff}
+.footer-credit{font-size:12px}
+.footer-credit a{color:var(--rose);text-decoration:underline;text-underline-offset:3px}
+.footer-credit a:hover{color:var(--ink)}
